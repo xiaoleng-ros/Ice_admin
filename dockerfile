@@ -16,6 +16,10 @@ RUN npm install
 # 复制项目文件
 COPY . .
 
+# 设置构建时环境变量（可以在部署时覆盖）
+ARG VITE_PROJECT_API=https://ice-server-poyr.onrender.com/api
+ENV VITE_PROJECT_API=$VITE_PROJECT_API
+
 # 构建项目
 RUN npm run build
 
@@ -24,6 +28,9 @@ FROM nginx:alpine
 
 # 复制构建输出到 Nginx 的默认静态文件目录
 COPY --from=builder /thrive/dist /usr/share/nginx/html
+
+# 复制 Nginx 配置（如果需要自定义）
+# COPY nginx.conf /etc/nginx/nginx.conf
 
 # 暴露端口
 EXPOSE 80
