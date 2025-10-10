@@ -156,6 +156,9 @@ importers:
       globals:
         specifier: ^16.3.0
         version: 16.3.0
+      katex:
+        specifier: ^0.16.23
+        version: 0.16.23
       postcss:
         specifier: ^8.4.27
         version: 8.5.6
@@ -2713,8 +2716,8 @@ packages:
   jszip@3.10.1:
     resolution: {integrity: sha512-xXDvecyTpGLrqFrvkrUSoxxfJI5AH7U8zxxtVclpsUtMCq4JQ290LY8AW5c7Ggnr/Y/oK+bQMbqK2qmtk3pN4g==}
 
-  katex@0.16.22:
-    resolution: {integrity: sha512-XCHRdUw4lf3SKBaJe4EvgqIuWwkPSo9XoeO8GjQW94Bp7TWv9hNhzZjZ+OH9yf1UmLygb7DIT5GSFQiyt16zYg==}
+  katex@0.16.23:
+    resolution: {integrity: sha512-7VlC1hsEEolL9xNO05v9VjrvWZePkCVBJqj8ruICxYjZfHaHbaU53AlP+PODyFIXEnaEIEWi3wJy7FPZ95JAVg==}
     hasBin: true
 
   keyv@4.5.4:
@@ -4570,7 +4573,7 @@ snapshots:
     dependencies:
       '@types/katex': 0.16.7
       bytemd: 1.22.0
-      katex: 0.16.22
+      katex: 0.16.23
       remark-math: 5.1.1
 
   '@bytemd/react@1.22.0(react@18.3.1)':
@@ -7190,7 +7193,7 @@ snapshots:
       readable-stream: 2.3.8
       setimmediate: 1.0.5
 
-  katex@0.16.22:
+  katex@0.16.23:
     dependencies:
       commander: 8.3.0
 
@@ -7460,7 +7463,7 @@ snapshots:
   micromark-extension-math@2.1.2:
     dependencies:
       '@types/katex': 0.16.7
-      katex: 0.16.22
+      katex: 0.16.23
       micromark-factory-space: 1.1.0
       micromark-util-character: 1.2.0
       micromark-util-symbol: 1.1.0
