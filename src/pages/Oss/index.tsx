@@ -221,7 +221,11 @@ export default () => {
             </Form.Item>
           )}
 
-          {oss.platform !== 'local' && (
+          {oss.platform === 'smms' ? (
+            <Form.Item label="API Token" name="secretKey" rules={[{ required: true, message: 'API Token不能为空' }]}>
+              <Input.Password placeholder="请输入SM.MS的API Token" />
+            </Form.Item>
+          ) : oss.platform !== 'local' && (
             <>
               <Form.Item
                 label="Access Key"
@@ -252,7 +256,7 @@ export default () => {
             <Input placeholder="请输入域名" />
           </Form.Item>
 
-          {oss.platform !== 'local' && (
+          {oss.platform !== 'local' && oss.platform !== 'smms' && (
             <Form.Item label="文件目录" name="basePath" rules={[{ required: true, message: '文件目录不能为空' }]}>
               <Input placeholder="请输入文件目录" />
             </Form.Item>
