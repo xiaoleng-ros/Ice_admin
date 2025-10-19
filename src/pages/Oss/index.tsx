@@ -222,10 +222,17 @@ export default () => {
           )}
 
           {oss.platform === 'smms' ? (
+            // SM.MS 只需要 API Token
             <Form.Item label="API Token" name="secretKey" rules={[{ required: true, message: 'API Token不能为空' }]}>
               <Input.Password placeholder="请输入SM.MS的API Token" />
             </Form.Item>
+          ) : oss.platform === 'imgtp' ? (
+            // 路过图床只需要 API Token
+            <Form.Item label="API Token" name="secretKey" rules={[{ required: true, message: 'API Token不能为空' }]}>
+              <Input.Password placeholder="请输入路过图床的API Token" />
+            </Form.Item>
           ) : oss.platform !== 'local' && (
+            // 其他云存储平台需要完整字段
             <>
               <Form.Item
                 label="Access Key"
@@ -256,7 +263,7 @@ export default () => {
             <Input placeholder="请输入域名" />
           </Form.Item>
 
-          {oss.platform !== 'local' && oss.platform !== 'smms' && (
+          {oss.platform !== 'local' && oss.platform !== 'smms' && oss.platform !== 'imgtp' && (
             <Form.Item label="文件目录" name="basePath" rules={[{ required: true, message: '文件目录不能为空' }]}>
               <Input placeholder="请输入文件目录" />
             </Form.Item>
